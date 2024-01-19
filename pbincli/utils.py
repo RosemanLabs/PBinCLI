@@ -58,7 +58,7 @@ def uri_validator(x):
 def strtobool(str):
     if str == 'true':
         return True
-    else if str == 'false':
+    elif str == 'false':
         return False
     else:
         raise ValueError(f"Tried to call strtobool on a value that does not equal a bool: {str}")
