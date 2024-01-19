@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 import os, sys, argparse
-# from distutils.util import strtobool
 
 import pbincli.actions
 from pbincli.api import PrivateBin
