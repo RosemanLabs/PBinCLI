@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 import os, sys, argparse
-from distutils.util import strtobool
 
 import pbincli.actions
 from pbincli.api import PrivateBin
-from pbincli.utils import PBinCLIException, PBinCLIError, validate_url_ending
+from pbincli.utils import PBinCLIException, PBinCLIError, validate_url_ending, strtobool
 
 CONFIG_PATHS = [
     os.path.join(".", "pbincli.conf", ),
@@ -27,7 +26,7 @@ def read_config(filename):
             try:
                 key, value = l.strip().split("=", 1)
                 if value.strip().lower() in ['true', 'false']:
-                    settings[key.strip()] = bool(strtobool(value.strip()))
+                    settings[key.strip()] = strtobool(value.strip().lower())
                 else:
                     settings[key.strip()] = value.strip()
             except ValueError:
